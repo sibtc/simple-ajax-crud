@@ -24,7 +24,7 @@ def save_book_form(request, form, template_name):
         else:
             data['form_is_valid'] = False
     context = {'form': form}
-    data['html_form'] = render_to_string(template_name, context, request)
+    data['html_form'] = render_to_string(template_name, context, request=request)
     return JsonResponse(data)
 
 
@@ -57,5 +57,5 @@ def book_delete(request, pk):
         })
     else:
         context = {'book': book}
-        data['html_form'] = render_to_string('books/includes/partial_book_delete.html', context, request)
+        data['html_form'] = render_to_string('books/includes/partial_book_delete.html', context, request=request)
     return JsonResponse(data)
