@@ -9,6 +9,7 @@ $(function () {
       type: 'get',
       dataType: 'json',
       beforeSend: function () {
+        $("#modal-book .modal-content").html("");
         $("#modal-book").modal("show");
       },
       success: function (data) {
